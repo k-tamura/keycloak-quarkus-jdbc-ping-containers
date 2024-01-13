@@ -35,6 +35,7 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:20.0
+    # If you want to use microdnf, comment out the line above and uncomment the line below.
     #build:
     #  context: .
     #  dockerfile: Dockerfile
