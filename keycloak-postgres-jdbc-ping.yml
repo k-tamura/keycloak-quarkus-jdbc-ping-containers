@@ -34,7 +34,7 @@ services:
       - 3000:8080
 
   keycloak:
-    image: quay.io/keycloak/keycloak:20.0
+    image: quay.io/keycloak/keycloak:21.0
     # If you want to use microdnf, comment out the line above and uncomment the line below.
     #build:
     #  context: .
