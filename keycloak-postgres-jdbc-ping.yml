@@ -50,7 +50,16 @@ services:
       KC_DB_PASSWORD: password
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_LOG: console,file
+      KC_LOG_FILE: /opt/keycloak/data/logs/server.log
       # KEYCLOAK_LOGLEVEL: DEBUG
+      KC_LOG_CONSOLE_COLOR: true
+      QUARKUS_HTTP_ACCESS_LOG_ENABLED: true
+      QUARKUS_HTTP_ACCESS_LOG_LOG_TO_FILE: true
+      QUARKUS_HTTP_ACCESS_LOG_LOG_DIRECTORY: /opt/keycloak/data/logs
+      QUARKUS_HTTP_ACCESS_LOG_BASE_FILE_NAME: access
+      QUARKUS_HTTP_ACCESS_LOG_PATTERN: '%h %l %u %t "%r" %s %b "%{i,Referer}" "%{i,User-Agent}" %D'
+      QUARKUS_HTTP_ACCESS_LOG_ROTATE: true
       # DEBUG_PORT: '*:8787'
       # DEBUG: true
       KC_CACHE_CONFIG_FILE: cache-ispn-jdbc-ping.xml
