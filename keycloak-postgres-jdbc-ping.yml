@@ -41,8 +41,8 @@ services:
     #build:
     #  context: .
     #  dockerfile: Dockerfile
-    volumes:
-      - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
+    #volumes:
+    #  - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
     ports:
       - 8787-8797:8787
     environment:
@@ -81,3 +81,6 @@ services:
       traefik.frontend.rule: PathPrefix:/
       traefik.frontend.passHostHeader: true
       # traefik.backend.loadbalancer.stickiness: true
+      traefik.frontend.middlewares: noop-buffering
+      traefik.ingress.kubernetes.io/buffering: "false"
+      
